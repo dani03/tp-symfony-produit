@@ -8,9 +8,20 @@
     {% if not produits is defined %}
         <p> aucun produit </p>
     {% else %}
+<div class=" d-block row ">
         {% for produit in produits %}
-            <p> {{ produit.name}} </p>
-            <p> {{ produit.description}} </p>
+            <div class="card col-md-6 mt-4 ml-4">
+                <div class="card-header">
+                    {{ produit.name}}
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>{{ produit.description}}</p>
+                        <footer class="blockquote-footer">{{ produit.price }} <cite title="Source Title">€</cite></footer>
+                    </blockquote>
+                </div>
+            </div>
         {% endfor %}
+</div>
     {% endif %}
 {% endblock %}
